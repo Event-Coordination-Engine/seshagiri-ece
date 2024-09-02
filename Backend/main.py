@@ -77,9 +77,9 @@ def login_user(user_login_obj : UserLoginDTO, db : db_dependency) :
     if not verify_password(user_login_obj.password, db_user.password) :
         raise HTTPException(status_code=401, detail="invalid Credentials")
     user_passon_dto = UserResponseDTO(email = db_user.email,
-                                      user_id = db_user.user_id,
+                                      user_id = db_user.user_id, 
                                       name = db_user.user_name,
-                                      Role = db_user.Role)
+                                      role = db_user.role)
     return {"status code ": 200, "message" : "sucessfully Logged in....!", "body" : user_passon_dto}
                                       
 

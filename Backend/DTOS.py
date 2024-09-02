@@ -14,5 +14,5 @@ class UserResponseDTO(BaseModel) :
     email : str
     user_id : int
     name : str
-    Role : str
+    role : str
 
